@@ -1,3 +1,10 @@
+-- Run dbstart $ORACLE_HOME
+-- Save the file somewhere with some-name.sql
+-- Run “sqlplus”, log in
+-- Run “@some-name.sql”
+-- Place to write scripts
+
+
 -- Table Creation
 
 DROP    TABLE School;

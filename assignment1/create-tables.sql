@@ -43,7 +43,7 @@ CREATE  TABLE Payroll (
     payroll_date            date            NOT NULL,
     payroll_type            varchar(50)     NOT NULL,
     payroll_description     varchar(200)    NOT NULL,
-    staff_id                int             NOT NULL 
+    staff_id                varchar(100)    NOT NULL 
                             CONSTRAINT fkey_payroll_staff REFERENCES Staff(staff_id)
 );
 

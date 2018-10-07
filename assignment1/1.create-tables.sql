@@ -51,25 +51,34 @@ CREATE  TABLE Payroll (
 CREATE  TABLE Student (
     student_id              varchar(100)    NOT NULL PRIMARY KEY,
     name                    varchar(100)    NOT NULL,
-    email                   varchar(100)    NOT NULL,
-    gender                  varchar(100)    NOT NULL,
+    email                   varchar(255)    NOT NULL,
+    gender                  varchar(10)     NOT NULL,
     phone_number            varchar(16)     NOT NULL,
     admission_year          int             NOT NULL,
-    school_id               int             NOT NULL 
+    school_id               int             NOT NULL   
                             CONSTRAINT fkey_student_school REFERENCES School(school_id)
 );
 
-CREATE TABLE Course (
-    course_id               int             NOT NULL PRIMARY KEY,
-    name                    varchar(100)    NOT NULL
+CREATE  TABLE Course (
+    course_id               varchar(10)     NOT NULL PRIMARY KEY,
+    course_name             varchar(100)    NOT NULL,
+    location                varchar(100)    NOT NULL,
+    class_time              varchar(100)    NOT NULL,
+    semester                int             NOT NULL,
+    year                    int             NOT NULL,
+    school_id               int             NOT NULL   
+                            CONSTRAINT fkey_course_school REFERENCES School(school_id),
+    staff_id                varchar(100)    NOT NULL   
+                            CONSTRAINT fkey_course_staff REFERENCES Staff(staff_id)
 );
 
 CREATE  TABLE Enrollment (
-    student_id              varchar(100)    NOT NULL   
-                            CONSTRAINT fkey_grade_student REFERENCES Student(student_id),
-    course_id               int             NOT NULL
-                            CONSTRAINT fkey_grade_course REFERENCES Course(course_id),
-    grade                   int             NOT NULL
+    student_id              varchar(100)    NOT NULL
+                            CONSTRAINT fkey_enrollment_student REFERENCES Student(student_id),
+    course_id               varchar(10)     NOT NULL
+                            CONSTRAINT fkey_enrollment_course REFERENCES Course(course_id),
+    grade                   NUMBER(6,2)     NOT NULL,
+    CONSTRAINT pkey_enrollment PRIMARY KEY (student_id, course_id)
 );
 
 CREATE  TABLE Bill (

@@ -33,7 +33,7 @@ GRANT SELECT ON Student TO Student;
 CREATE OR REPLACE FUNCTION StudentGrade(v_schema IN VARCHAR2, v_obj IN VARCHAR2)
 RETURN VARCHAR2 IS condition VARCHAR2(200);
 BEGIN
-    condition := " ";
+    condition := '';
     RETURN condition;
 END;
 /

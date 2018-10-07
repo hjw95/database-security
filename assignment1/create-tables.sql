@@ -12,9 +12,7 @@ ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE;
 DROP    TABLE Bill;
 DROP    TABLE Payroll;
 DROP    TABLE Staff;
-
 DROP    TABLE Student;
-
 DROP    TABLE School;
 
 CREATE  TABLE School (
@@ -47,6 +45,16 @@ CREATE  TABLE Payroll (
                             CONSTRAINT fkey_payroll_staff REFERENCES Staff(staff_id)
 );
 
+CREATE  TABLE Student (
+    student_id              varchar(100)    NOT NULL PRIMARY KEY,
+    name                    varchar(100)    NOT NULL,
+    email                   varchar(100)    NOT NULL,
+    gender                  varchar(100)    NOT NULL,
+    phone_number            varchar(16)     NOT NULL,
+    admission_year          int             NOT NULL,
+    school_id               int             NOT NULL 
+                            CONSTRAINT fkey_student_school REFERENCES School(school_id)
+);
 
 CREATE  TABLE Bill (
     bill_id                 int             NOT NULL PRIMARY KEY,
@@ -55,6 +63,6 @@ CREATE  TABLE Bill (
     amount                  number(6,2)     NOT NULL,
     payment_method          varchar(20)     NOT NULL,
     payment_date            timestamp       NOT NULL,
-    student_id              int             NOT NULL   
+    student_id              varchar(100)    NOT NULL   
                             CONSTRAINT fkey_bill_student REFERENCES Student(student_id)
 );

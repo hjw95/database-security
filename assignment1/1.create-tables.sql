@@ -11,11 +11,11 @@ ALTER SESSION SET CURRENT_SCHEMA = dev;
 -- Table Creation
 
 DROP    TABLE Bill;
-DROP    TABLE Payroll;
-DROP    TABLE Staff;
 DROP    TABLE Enrollment;
 DROP    TABLE Course;
 DROP    TABLE Student;
+DROP    TABLE Payroll;
+DROP    TABLE Staff;
 DROP    TABLE School;
 
 CREATE  TABLE School (
@@ -61,7 +61,7 @@ CREATE  TABLE Student (
 
 CREATE  TABLE Course (
     course_id               varchar(10)     NOT NULL PRIMARY KEY,
-    course_name             varchar(100)    NOT NULL,
+    course_name             varchar(100)    NOT NULL
     location                varchar(100)    NOT NULL,
     class_time              varchar(100)    NOT NULL,
     semester                int             NOT NULL,
@@ -78,7 +78,7 @@ CREATE  TABLE Enrollment (
     course_id               varchar(10)     NOT NULL
                             CONSTRAINT fkey_enrollment_course REFERENCES Course(course_id),
     grade                   NUMBER(6,2)     NOT NULL,
-    CONSTRAINT pkey_enrollment PRIMARY KEY (student_id, course_id)
+                            CONSTRAINT pkey_enrollment PRIMARY KEY (student_id, course_id)
 );
 
 CREATE  TABLE Bill (

@@ -11,8 +11,8 @@ GRANT SELECT ON Staff(staff_id, name, email, title, phone_number, office_locatio
 
 -- Granting Student Access
 
-GRANT SELECT ON Enrollment TO Student;
+GRANT SELECT ON Enrollment TO STUDENT;
 
-GRANT SELECT ON Bill TO Student;
+GRANT SELECT ON Bill TO STUDENT;
 
-GRANT SELECT ON Student TO Student;
+GRANT SELECT ON Student TO STUDENT;

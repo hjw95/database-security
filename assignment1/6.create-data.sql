@@ -21,7 +21,7 @@ VALUES
 INSERT INTO Course
 (
     course_id,
-    name
+    course_name
 )
 VALUES
 (
@@ -41,7 +41,7 @@ INSERT INTO Student
 )
 VALUES
 (
-    'user1',
+    'USER1',
     'test',
     'test@test.com',
     'something',
@@ -62,7 +62,7 @@ INSERT INTO Student
 )
 VALUES
 (
-    'user2',
+    'USER2',
     'test',
     'test@test.com',
     'something',
@@ -79,7 +79,7 @@ INSERT INTO Enrollment
 )
 VALUES
 (
-    'user1',
+    'USER1',
     0,
     0
 );
@@ -93,7 +93,7 @@ INSERT INTO Enrollment
 )
 VALUES
 (
-    'user2',
+    'USER2',
     0,
     100
 );

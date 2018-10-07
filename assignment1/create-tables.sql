@@ -1,3 +1,6 @@
+ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE;
+ALTER SESSION SET CURRENT_SCHEMA = dev;
+
 -- Run dbstart $ORACLE_HOME
 -- sqlplus / as sysdba;
 -- startup;
@@ -7,11 +10,11 @@
 -- Place to write scripts
 -- Table Creation
 
-ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE; 
-
 DROP    TABLE Bill;
 DROP    TABLE Payroll;
 DROP    TABLE Staff;
+DROP    TABLE Enrollment;
+DROP    TABLE Course;
 DROP    TABLE Student;
 DROP    TABLE School;
 
@@ -54,6 +57,19 @@ CREATE  TABLE Student (
     admission_year          int             NOT NULL,
     school_id               int             NOT NULL 
                             CONSTRAINT fkey_student_school REFERENCES School(school_id)
+);
+
+CREATE TABLE Course (
+    course_id               int             NOT NULL PRIMARY KEY,
+    name                    varchar(100)    NOT NULL
+);
+
+CREATE  TABLE Enrollment (
+    student_id              varchar(100)    NOT NULL   
+                            CONSTRAINT fkey_grade_student REFERENCES Student(student_id),
+    course_id               int             NOT NULL
+                            CONSTRAINT fkey_grade_course REFERENCES Course(course_id),
+    grade                   int             NOT NULL
 );
 
 CREATE  TABLE Bill (

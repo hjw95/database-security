@@ -1,0 +1,9 @@
+ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE; 
+ALTER SESSION SET CURRENT_SCHEMA = dev;
+
+-- Creating Users
+
+DROP USER user1;
+
+CREATE USER user1 IDENTIFIED BY password1;
+GRANT Student TO user1;

@@ -4,13 +4,13 @@ ALTER SESSION SET CURRENT_SCHEMA = dev;
 -- Creating Roles
 
 DROP    ROLE Student;
-CREATE  ROLE Student             IDENTIFIED BY sp;
+CREATE  ROLE Student;
 
 DROP    ROLE Lecturer;
-CREATE  ROLE Lecturer            IDENTIFIED BY lp;
+CREATE  ROLE Lecturer;
 
 DROP    ROLE StaffAdmin;
-CREATE  ROLE StaffAdmin          IDENTIFIED BY sap;
+CREATE  ROLE StaffAdmin;
 
 DROP    ROLE EnrollmentAdmin;
-CREATE  ROLE EnrollmentAdmin     IDENTIFIED BY eap;
+CREATE  ROLE EnrollmentAdmin;

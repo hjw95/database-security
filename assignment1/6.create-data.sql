@@ -3,14 +3,6 @@ ALTER SESSION SET CURRENT_SCHEMA = dev;
 
 -- Create data
 
-TRUNCATE TABLE Course CASCADE;
-
-TRUNCATE TABLE Enrollment CASCADE;
-
-TRUNCATE TABLE School CASCADE;
-
-TRUNCATE TABLE Student CASCADE;
-
 INSERT INTO School
 (
     school_id,
@@ -58,6 +50,27 @@ VALUES
     0
 );
 
+INSERT INTO Student
+(
+    student_id,
+    name,
+    email,
+    gender,
+    phone_number,
+    admission_year,
+    school_id    
+)
+VALUES
+(
+    'user2',
+    'test',
+    'test@test.com',
+    'something',
+    '12345678',
+    3000,
+    0
+);
+
 INSERT INTO Enrollment
 (
     student_id,
@@ -69,4 +82,18 @@ VALUES
     'user1',
     0,
     0
+);
+
+
+INSERT INTO Enrollment
+(
+    student_id,
+    course_id,
+    grade
+)
+VALUES
+(
+    'user2',
+    0,
+    100
 );

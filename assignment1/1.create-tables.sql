@@ -1,3 +1,6 @@
+ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE;
+ALTER SESSION SET CURRENT_SCHEMA = dev;
+
 -- Run dbstart $ORACLE_HOME
 -- sqlplus / as sysdba;
 -- startup;
@@ -7,12 +10,11 @@
 -- Place to write scripts
 -- Table Creation
 
-ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE; 
-DROP    Table Enrollment;
-DROP    Table course;
 DROP    TABLE Bill;
 DROP    TABLE Payroll;
 DROP    TABLE Staff;
+DROP    TABLE Enrollment;
+DROP    TABLE Course;
 DROP    TABLE Student;
 DROP    TABLE School;
 
@@ -57,17 +59,6 @@ CREATE  TABLE Student (
                             CONSTRAINT fkey_student_school REFERENCES School(school_id)
 );
 
-CREATE  TABLE Bill (
-    bill_id                 int             NOT NULL PRIMARY KEY,
-    semester                int             NOT NULL,
-    fee_type                varchar(20)     NOT NULL,
-    amount                  number(6,2)     NOT NULL,
-    payment_method          varchar(20)     NOT NULL,
-    payment_date            timestamp       NOT NULL,
-    student_id              varchar(100)    NOT NULL   
-                            CONSTRAINT fkey_bill_student REFERENCES Student(student_id)
-);
-
 CREATE  TABLE Course (
     course_id               varchar(10)     NOT NULL PRIMARY KEY,
     course_name             varchar(100)    NOT NULL,
@@ -88,4 +79,15 @@ CREATE  TABLE Enrollment (
                             CONSTRAINT fkey_enrollment_course REFERENCES Course(course_id),
     grade                   NUMBER(6,2)     NOT NULL,
     CONSTRAINT pkey_enrollment PRIMARY KEY (student_id, course_id)
+);
+
+CREATE  TABLE Bill (
+    bill_id                 int             NOT NULL PRIMARY KEY,
+    semester                int             NOT NULL,
+    fee_type                varchar(20)     NOT NULL,
+    amount                  number(6,2)     NOT NULL,
+    payment_method          varchar(20)     NOT NULL,
+    payment_date            timestamp       NOT NULL,
+    student_id              varchar(100)    NOT NULL   
+                            CONSTRAINT fkey_bill_student REFERENCES Student(student_id)
 );

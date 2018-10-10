@@ -6,7 +6,8 @@ ALTER SESSION SET CURRENT_SCHEMA = dev;
 -- SELECT SYS_CONTEXT('SYS_SESSION_ROLES', 'DBA') FROM DUAL;
 -- SELECT SYS_CONTEXT('USERENV', 'SESSION_USER') FROM DUAL; 
 
-CREATE OR REPLACE FUNCTION student_enrollment(v_schema IN VARCHAR2, v_obj IN VARCHAR2)
+-- Student Row Level Security Function
+CREATE OR REPLACE FUNCTION rls_student(v_schema IN VARCHAR2, v_obj IN VARCHAR2)
 RETURN VARCHAR2 IS condition VARCHAR2(200);
 BEGIN
     DECLARE
@@ -14,6 +15,7 @@ BEGIN
     BEGIN
         SELECT COUNT(*) INTO role_count FROM dev.RoleMap WHERE user_id = SYS_CONTEXT('USERENV', 'SESSION_USER') AND role_name = 'STUDENT';
         IF role_count > 0 THEN
+            DBMS_OUTPUT.PUT_LINE('Row Level Security - Student Id Limit');
             condition := 'student_id = SYS_CONTEXT(''USERENV'', ''SESSION_USER'')';
         ELSE
             condition := '';
@@ -24,6 +26,7 @@ BEGIN
 END;
 /
 
+-- student can only view his own grade
 BEGIN
     DBMS_RLS.DROP_POLICY(
         object_schema => 'dev',
@@ -39,11 +42,31 @@ BEGIN
         object_name => 'Enrollment',
         policy_name => 'rls_student_enrollment',
         function_schema => 'dev',
-        policy_function => 'student_enrollment'
+        policy_function => 'rls_student'
     );
 END;
 /
 
+-- Student can only view own bill
+BEGIN
+    DBMS_RLS.DROP_POLICY(
+        object_schema => 'dev',
+        object_name => 'Bill',
+        policy_name => 'rls_student_bill'
+    );
+END;
+/
+
+BEGIN
+    DBMS_RLS.ADD_POLICY(
+        object_schema => 'dev',
+        object_name => 'Bill',
+        policy_name => 'rls_student_bill',
+        function_schema => 'dev',
+        policy_function => 'rls_student'
+    );
+END;
+/
 
 -- Lecturer / Staff Row Level Security Function
 

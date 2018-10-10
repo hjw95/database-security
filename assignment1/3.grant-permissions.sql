@@ -28,3 +28,7 @@ GRANT UPDATE (name, email, title, phone_number, office_location, bank_account) O
 -- Granting Course Admin Access
 
 GRANT INSERT ON Student TO COURSE_ADMIN;
+
+-- Granting Finance Access
+GRANT SELECT, UPDATE, INSERT ON Payroll TO Finance;
+GrANT SELECT, UPDATE, INSERT ON Bill TO Finance;

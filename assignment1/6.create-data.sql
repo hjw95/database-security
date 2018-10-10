@@ -4,7 +4,10 @@ ALTER SESSION SET CURRENT_SCHEMA = dev;
 -- Schools
 
 INSERT INTO School (school_id, school_name, school_location, dean)
-VALUES (0, 'School of Computing', 'NUS Somwewhere', 'Don''t know who');
+VALUES (0, 'School of Computing', 'NUS SOC Building', 'Don''t know who');
+
+INSERT INTO School (school_id, school_name, school_location, dean)
+VALUES (1, 'Admin Office', 'NUS Admin Building', 'Harry Porter');
 
 -- LECTURER1
 
@@ -72,3 +75,7 @@ VALUES (2, 1, 'school', 1000, 'online', '01 Jan 2018', 'STUDENT2');
 
 INSERT INTO Enrollment (student_id, course_id, grade)
 VALUES ('STUDENT2', 0, 100);
+
+-- Finance
+INSERT INTO Staff(staff_id, name, email, title, phone_number, office_location, salary, bank_account, school_id)
+VALUES ('FINANCE1', 'finance1', 'finance1@1.com', 'fin officer 1', 'p1', 'l2',4444, '4444444', 1);

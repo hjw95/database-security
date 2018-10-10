@@ -11,17 +11,13 @@ RETURN VARCHAR2 IS condition VARCHAR2(200);
 BEGIN
     DECLARE
         role_count INT;
-        CURSOR role_cursor IS select role FROM session_roles;
     BEGIN
-        SELECT COUNT(*) INTO role_count FROM USER_ROLE_PRIVS WHERE USERNAME = SYS_CONTEXT('USERENV', 'SESSION_USER') AND GRANTED_ROLE = 'STUDENT';
+        SELECT COUNT(*) INTO role_count FROM dev.RoleMap WHERE user_id = SYS_CONTEXT('USERENV', 'SESSION_USER') AND role_name = 'STUDENT';
         IF role_count > 0 THEN
             condition := 'student_id = SYS_CONTEXT(''USERENV'', ''SESSION_USER'')';
         ELSE
             condition := '';
         END IF;
-        for role in role_cursor loop
-        DBMS_OUTPUT.PUT_LINE(role.role);
-        end loop;
         DBMS_OUTPUT.PUT_LINE(role_count);
         RETURN condition;
     END;

@@ -10,6 +10,7 @@ ALTER SESSION SET CURRENT_SCHEMA = dev;
 -- Place to write scripts
 -- Table Creation
 
+DROP    TABLE RoleMap;
 DROP    TABLE Bill;
 DROP    TABLE Enrollment;
 DROP    TABLE Course;
@@ -90,4 +91,9 @@ CREATE  TABLE Bill (
     payment_date            timestamp       NOT NULL,
     student_id              varchar(100)    NOT NULL   
                             CONSTRAINT fkey_bill_student REFERENCES Student(student_id)
+);
+
+CREATE  TABLE RoleMap (
+    user_id                 varchar(100)    NOT NULL,
+    role_name               varchar(200)    NOT NULL
 );

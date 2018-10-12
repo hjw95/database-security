@@ -14,6 +14,7 @@ DROP    TABLE RoleMap;
 DROP    TABLE Bill;
 DROP    TABLE Enrollment;
 DROP    TABLE Course;
+DROP    VIEW  Staff_Public;
 DROP    TABLE Student;
 DROP    TABLE Payroll;
 DROP    TABLE Staff;

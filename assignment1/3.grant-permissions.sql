@@ -5,9 +5,9 @@ ALTER SESSION SET CURRENT_SCHEMA = dev;
 
 GRANT SELECT ON School TO PUBLIC;
 
-GRANT SELECT ON Courses TO Public;
+GRANT SELECT ON Course TO PUBLIC;
 
-GRANT SELECT ON Staff(staff_id, name, email, title, phone_number, office_location, school_id) TO PUBLIC;
+GRANT SELECT( staff_id, name, email, title, phone_number, office_location, school_id) ON Staff TO PUBLIC;
 
 -- Granting Student Access
 
@@ -16,3 +16,7 @@ GRANT SELECT ON Enrollment TO STUDENT;
 GRANT SELECT ON Bill TO STUDENT;
 
 GRANT SELECT ON Student TO STUDENT;
+
+-- Granting Lecturer Access
+
+GRANT SELECT (salary, bank_account) ON Staff to LECTURER;

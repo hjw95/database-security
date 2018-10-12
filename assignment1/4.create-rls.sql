@@ -43,3 +43,71 @@ BEGIN
     );
 END;
 /
+
+
+-- Lecturer / Staff Row Level Security Function
+
+CREATE OR REPLACE FUNCTION rls_staff(v_schema IN VARCHAR2, v_obj IN VARCHAR2)
+RETURN VARCHAR2 IS condition VARCHAR2(200);
+BEGIN
+    DECLARE
+        role_count INT;
+    BEGIN
+        SELECT COUNT(*) INTO role_count FROM dev.RoleMap WHERE user_id = SYS_CONTEXT('USERENV', 'SESSION_USER') AND role_name = 'LECTURER';
+        IF role_count > 0 THEN
+            DBMS_OUTPUT.PUT_LINE('Row Level Security - Staff Id Limit');
+            condition := 'staff_id = SYS_CONTEXT(''USERENV'', ''SESSION_USER'')';
+        ELSE
+            condition := '';
+        END IF;
+        RETURN condition;
+    END;
+END;
+/
+
+-- Lecturer / Staff Row Level Security - Can select only own payroll
+
+BEGIN
+    DBMS_RLS.DROP_POLICY(
+        object_schema => 'dev',
+        object_name => 'Payroll',
+        policy_name => 'rls_staff_payroll'
+    );
+END;
+/
+
+BEGIN
+    DBMS_RLS.ADD_POLICY(
+        object_schema => 'dev',
+        object_name => 'Payroll',
+        policy_name => 'rls_staff_payroll',
+        function_schema => 'dev',
+        policy_function => 'rls_staff'
+    );
+END;
+/
+
+-- Lecturer / Staff Row Level Security - Can select only own salary and bank account
+
+
+BEGIN
+    DBMS_RLS.DROP_POLICY(
+        object_schema => 'dev',
+        object_name => 'Payroll',
+        policy_name => 'rls_staff_payroll'
+    );
+END;
+/
+
+BEGIN
+    DBMS_RLS.ADD_POLICY(
+        object_schema => 'dev',
+        object_name => 'Payroll',
+        policy_name => 'rls_staff_payroll',
+        function_schema => 'dev',
+        policy_function => 'rls_staff',
+        sec_relevant_cols => 'salary, bank_account',
+        sec_relevant_cols_opt => DBMS_RLS.ALL_ROWS
+    );
+END;
+/

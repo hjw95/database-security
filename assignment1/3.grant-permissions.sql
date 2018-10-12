@@ -23,7 +23,7 @@ GRANT SELECT ON Payroll TO LECTURER;
 
 GRANT SELECT ON Staff TO LECTURER;
 
-GRANT UPDATE (name, email, title, phone_number, office_location, salary, bank_account) ON Staff TO LECTURER;
+GRANT UPDATE (name, email, title, phone_number, office_location, bank_account) ON Staff TO LECTURER;
 
 -- Granting Course Admin Access
 

@@ -7,7 +7,7 @@ GRANT SELECT ON School TO PUBLIC;
 
 GRANT SELECT ON Course TO PUBLIC;
 
-GRANT SELECT( staff_id, name, email, title, phone_number, office_location, school_id) ON Staff TO PUBLIC;
+GRANT SELECT ON Staff_Public TO PUBLIC;
 
 -- Granting Student Access
 
@@ -19,4 +19,12 @@ GRANT SELECT ON Student TO STUDENT;
 
 -- Granting Lecturer Access
 
-GRANT SELECT (salary, bank_account) ON Staff to LECTURER;
+GRANT SELECT ON Payroll TO LECTURER;
+
+GRANT SELECT ON Staff TO LECTURER;
+
+GRANT UPDATE (name, email, title, phone_number, office_location, salary, bank_account) ON Staff TO LECTURER;
+
+-- Granting Course Admin Access
+
+GRANT INSERT ON Student TO COURSE_ADMIN;

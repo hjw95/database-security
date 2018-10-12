@@ -39,6 +39,16 @@ CREATE  TABLE Staff (
                             CONSTRAINT fkey_staff_school REFERENCES School(school_id)
 );
 
+CREATE  VIEW Staff_Public AS
+SELECT  staff_id,
+        name,
+        email,
+        title,
+        phone_number,
+        office_location,
+        school_id
+FROM Staff;
+
 CREATE  TABLE Payroll (
     payroll_id              int             NOT NULL PRIMARY KEY,
     amount                  number(8,2)     NOT NULL,

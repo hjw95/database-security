@@ -21,7 +21,7 @@ VALUES ('STUDENT1', 'test', 'test@test.com', 'something', '12345678', 3000, 0);
 INSERT INTO Student (student_id, name, email, gender, phone_number, admission_year, school_id)
 VALUES ('STUDENT2', 'test', 'test@test.com', 'something', '12345678', 3000, 0);
 
-INSERT INTO BIll (bill_id, semester, fee_type, amount, payment_method, payment_date, student_id)
+INSERT INTO Bill (bill_id, semester, fee_type, amount, payment_method, payment_date, student_id)
 VALUES (0, 1, 'school', 1000, 'online', '01 Jan 2018', 'STUDENT1');
 
 INSERT INTO Enrollment (student_id, course_id, grade)

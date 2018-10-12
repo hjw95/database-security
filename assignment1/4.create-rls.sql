@@ -93,8 +93,8 @@ END;
 BEGIN
     DBMS_RLS.DROP_POLICY(
         object_schema => 'dev',
-        object_name => 'Payroll',
-        policy_name => 'rls_staff_payroll'
+        object_name => 'Staff',
+        policy_name => 'rls_staff_staff'
     );
 END;
 /
@@ -102,8 +102,8 @@ END;
 BEGIN
     DBMS_RLS.ADD_POLICY(
         object_schema => 'dev',
-        object_name => 'Payroll',
-        policy_name => 'rls_staff_payroll',
+        object_name => 'Staff',
+        policy_name => 'rls_staff_staff',
         function_schema => 'dev',
         policy_function => 'rls_staff',
         sec_relevant_cols => 'salary, bank_account',

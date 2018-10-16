@@ -87,53 +87,14 @@ BEGIN
         policy_name => 'rls_student_update',
         function_schema => 'dev',
         policy_function => 'rls_student',
-	update_check => TRUE
-    );
-END;
-/
-
-
-
--- Student Row Level Security Function
--- Students in Student Role can view other Students in Student table
-CREATE OR REPLACE FUNCTION rls_student_student(v_schema IN VARCHAR2, v_obj IN VARCHAR2)
-RETURN VARCHAR2 IS condition VARCHAR2(200);
-BEGIN
-    DECLARE
-        role_count INT;
-    BEGIN
-        
-        condition := '';
-       
-        RETURN condition;
-    END;
-END;
-/
-
-
-
--- Student can only view some of the other student's information
-BEGIN
-    DBMS_RLS.DROP_POLICY(
-        object_schema => 'dev',
-        object_name => 'Student',
-        policy_name => 'rls_student_hide_other_students_information'
-    );
-END;
-/
-
-BEGIN
-    DBMS_RLS.ADD_POLICY(
-        object_schema => 'dev',
-        object_name => 'Student',
-        policy_name => 'rls_student_hide_other_students_information',
-        function_schema => 'dev',
-        policy_function => 'rls_student_student',
+	update_check => TRUE,
 	sec_relevant_cols => 'student_id, email, gender, phone_number, admission_year, school_id',
 	sec_relevant_cols_opt => dbms_rls.ALL_ROWS
     );
 END;
 /
+
+
 
 
 -- Lecturer / Staff Row Level Security Function

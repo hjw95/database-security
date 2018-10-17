@@ -164,28 +164,6 @@ BEGIN
 END;
 /
 
--- Lecturer / Staff Row Level Security - Can select only own courses
-
-BEGIN
-    DBMS_RLS.DROP_POLICY(
-        object_schema => 'dev',
-        object_name => 'Course',
-        policy_name => 'rls_staff_course'
-    );
-END;
-/
-
-BEGIN
-    DBMS_RLS.ADD_POLICY(
-        object_schema => 'dev',
-        object_name => 'Course',
-        policy_name => 'rls_staff_course',
-        function_schema => 'dev',
-        policy_function => 'rls_staff'
-    );
-END;
-/
-
 -- Lecturer / Staff Row Level Security Function for Enrollment
 
 CREATE OR REPLACE FUNCTION rls_staff_enrollment(v_schema IN VARCHAR2, v_obj IN VARCHAR2)
@@ -265,7 +243,9 @@ BEGIN
         object_name => 'Student',
         policy_name => 'rls_staff_student',
         function_schema => 'dev',
-        policy_function => 'rls_staff_student'
+        policy_function => 'rls_staff_student',
+        sec_relevant_cols =>'student_id, email, gender, phone_number, admission_year, school_id', 
+        sec_relevant_cols_opt => dbms_rls.ALL_ROWS
     );
 END;
 /

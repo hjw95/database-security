@@ -24,10 +24,14 @@ GRANT SELECT ON Payroll TO LECTURER;
 GRANT SELECT ON Staff TO LECTURER;
 
 GRANT UPDATE (name, email, title, phone_number, office_location, bank_account) ON Staff TO LECTURER;
+GRANT SELECT, UPDATE ON Enrollment TO LECTURER;
+GRANT SELECT ON Student TO LECTURER;
 
 -- Granting Course Admin Access
 
 GRANT INSERT ON Student TO COURSE_ADMIN;
+GRANT SELECT, UPDATE, INSERT ON Course TO COURSE_ADMIN
+GRANT SELECT, INSERT, DELETE ON Enrollment TO COURSE_ADMIN
 
 -- Granting Finance Access
 GRANT SELECT, UPDATE, INSERT ON Payroll TO FINANCE;

@@ -1,3 +1,4 @@
 # database-security
 Database security project for NUS course
-hello
+
+https://help.github.com/articles/basic-writing-and-formatting-syntax/

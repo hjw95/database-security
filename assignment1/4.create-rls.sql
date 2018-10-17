@@ -68,6 +68,35 @@ BEGIN
 END;
 /
 
+
+
+-- Student can only update his/her own information
+BEGIN
+    DBMS_RLS.DROP_POLICY(
+        object_schema => 'dev',
+        object_name => 'Student',
+        policy_name => 'rls_student_update'
+    );
+END;
+/
+
+BEGIN
+    DBMS_RLS.ADD_POLICY(
+        object_schema => 'dev',
+        object_name => 'Student',
+        policy_name => 'rls_student_update',
+        function_schema => 'dev',
+        policy_function => 'rls_student',
+	update_check => TRUE,
+	sec_relevant_cols => 'student_id, email, gender, phone_number, admission_year, school_id',
+	sec_relevant_cols_opt => dbms_rls.ALL_ROWS
+    );
+END;
+/
+
+
+
+
 -- Lecturer / Staff Row Level Security Function
 
 CREATE OR REPLACE FUNCTION rls_staff(v_schema IN VARCHAR2, v_obj IN VARCHAR2)

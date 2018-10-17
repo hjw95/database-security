@@ -79,3 +79,5 @@ VALUES ('STUDENT2', 0, 100);
 -- Finance
 INSERT INTO Staff(staff_id, name, email, title, phone_number, office_location, salary, bank_account, school_id)
 VALUES ('FINANCE1', 'finance1', 'finance1@1.com', 'fin officer 1', 'p1', 'l2',4444, '4444444', 1);
+
+

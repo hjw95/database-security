@@ -17,6 +17,8 @@ GRANT SELECT ON Bill TO STUDENT;
 
 GRANT SELECT ON Student TO STUDENT;
 
+GRANT UPDATE ON Student TO STUDENT;
+
 -- Granting Lecturer Access
 
 GRANT SELECT ON Payroll TO LECTURER;
@@ -35,4 +37,9 @@ GRANT SELECT, INSERT, DELETE ON Enrollment TO COURSE_ADMIN
 
 -- Granting Finance Access
 GRANT SELECT, UPDATE, INSERT ON Payroll TO FINANCE;
-GrANT SELECT, UPDATE, INSERT ON Bill TO FINANCE
+GRANT SELECT, UPDATE, INSERT ON Bill TO FINANCE
+
+GRANT SELECT, INSERT ON Staff to FINANCE; -- INSERT: insufficient privileges??
+GRANT UPDATE (bank_account, salary) ON Staff to FINANCE; -- insufficient privileges?
+
+

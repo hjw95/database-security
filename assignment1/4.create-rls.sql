@@ -87,9 +87,9 @@ BEGIN
         policy_name => 'rls_student_update',
         function_schema => 'dev',
         policy_function => 'rls_student',
-	update_check => TRUE,
-	sec_relevant_cols => 'student_id, email, gender, phone_number, admission_year, school_id',
-	sec_relevant_cols_opt => dbms_rls.ALL_ROWS
+        update_check => TRUE,
+        sec_relevant_cols => 'student_id, email, gender, phone_number, admission_year, school_id',
+        sec_relevant_cols_opt => dbms_rls.ALL_ROWS
     );
 END;
 /
@@ -244,7 +244,7 @@ BEGIN
         policy_name => 'rls_staff_student',
         function_schema => 'dev',
         policy_function => 'rls_staff_student',
-        sec_relevant_cols =>'student_id, email, gender, phone_number, admission_year, school_id', 
+        sec_relevant_cols =>'student_id, gender, phone_number, admission_year, school_id', 
         sec_relevant_cols_opt => dbms_rls.ALL_ROWS
     );
 END;

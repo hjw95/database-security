@@ -17,7 +17,7 @@ GRANT SELECT ON Bill TO STUDENT;
 
 GRANT SELECT ON Student TO STUDENT;
 
-GRANT UPDATE ON Student TO STUDENT;
+GRANT UPDATE (email, phone_number) ON Student TO STUDENT; 
 
 -- Granting Lecturer Access
 

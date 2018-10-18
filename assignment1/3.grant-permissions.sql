@@ -40,7 +40,7 @@ GRANT SELECT, INSERT, DELETE ON Enrollment TO COURSE_ADMIN;
 GRANT SELECT, UPDATE, INSERT ON Payroll TO FINANCE;
 GRANT SELECT, UPDATE, INSERT ON Bill TO FINANCE;
 
-GRANT SELECT, INSERT ON Staff to FINANCE; -- INSERT: insufficient privileges??
-GRANT UPDATE (bank_account, salary) ON Staff to FINANCE; -- insufficient privileges?
+GRANT SELECT, INSERT ON Staff to FINANCE; 
+GRANT UPDATE (bank_account, salary) ON Staff to FINANCE;
 
 

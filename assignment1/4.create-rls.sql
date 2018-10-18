@@ -69,6 +69,30 @@ END;
 /
 
 
+-- Student can only select his/her own information, and view a limited information for other students
+BEGIN
+    DBMS_RLS.DROP_POLICY(
+        object_schema => 'dev',
+        object_name => 'Student',
+        policy_name => 'rls_student_select'
+    );
+END;
+/
+
+BEGIN
+    DBMS_RLS.ADD_POLICY(
+        object_schema => 'dev',
+        object_name => 'Student',
+        policy_name => 'rls_student_select',
+        function_schema => 'dev',
+        policy_function => 'rls_student',
+        statement_types => 'SELECT',
+        sec_relevant_cols => 'student_id, email, gender, phone_number, admission_year, school_id',
+        sec_relevant_cols_opt => dbms_rls.ALL_ROWS
+    );
+END;
+/
+
 
 -- Student can only update his/her own information
 BEGIN
@@ -86,10 +110,9 @@ BEGIN
         object_name => 'Student',
         policy_name => 'rls_student_update',
         function_schema => 'dev',
-        policy_function => 'rls_student',
         update_check => TRUE,
-        sec_relevant_cols => 'student_id, email, gender, phone_number, admission_year, school_id',
-        sec_relevant_cols_opt => dbms_rls.ALL_ROWS
+        statement_types => 'UPDATE',
+        policy_function => 'rls_student'
     );
 END;
 /

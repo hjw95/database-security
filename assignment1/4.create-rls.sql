@@ -169,7 +169,7 @@ BEGIN
     DBMS_RLS.DROP_POLICY(
         object_schema => 'dev',
         object_name => 'Staff',
-        policy_name => 'rls_staff_staff'
+        policy_name => 'rls_staff_staff_select'
     );
 END;
 /
@@ -178,11 +178,33 @@ BEGIN
     DBMS_RLS.ADD_POLICY(
         object_schema => 'dev',
         object_name => 'Staff',
-        policy_name => 'rls_staff_staff',
+        policy_name => 'rls_staff_staff_select',
         function_schema => 'dev',
         policy_function => 'rls_staff',
+        statement_types => 'SELECT',
         sec_relevant_cols => 'salary, bank_account',
         sec_relevant_cols_opt => DBMS_RLS.ALL_ROWS
+    );
+END;
+/
+
+BEGIN
+    DBMS_RLS.DROP_POLICY(
+        object_schema => 'dev',
+        object_name => 'Staff',
+        policy_name => 'rls_staff_staff_update'
+    );
+END;
+/
+
+BEGIN
+    DBMS_RLS.ADD_POLICY(
+        object_schema => 'dev',
+        object_name => 'Staff',
+        policy_name => 'rls_staff_staff_update',
+        function_schema => 'dev',
+        policy_function => 'rls_staff',
+        statement_types => 'UPDATE'
     );
 END;
 /

@@ -41,8 +41,7 @@ CREATE  TABLE Staff (
 );
 
 CREATE  VIEW Staff_Public AS
-SELECT  staff_id,
-        name,
+SELECT  name,
         email,
         title,
         phone_number,

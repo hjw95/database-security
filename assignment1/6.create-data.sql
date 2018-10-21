@@ -74,7 +74,7 @@ INSERT INTO Bill (bill_id, semester, fee_type, amount, payment_method, payment_d
 VALUES (2, 1, 'school', 1000, 'online', '01 Jan 2018', 'STUDENT2');
 
 INSERT INTO Enrollment (student_id, course_id, grade)
-VALUES ('STUDENT2', 0, 100);
+VALUES ('STUDENT2', 1, 100);
 
 -- Finance
 INSERT INTO Staff(staff_id, name, email, title, phone_number, office_location, salary, bank_account, school_id)

@@ -87,7 +87,7 @@ BEGIN
         function_schema => 'dev',
         policy_function => 'rls_student',
         statement_types => 'SELECT',
-        sec_relevant_cols => 'student_id, email, gender, phone_number, admission_year, school_id',
+        sec_relevant_cols => 'student_id, gender, phone_number, admission_year, school_id',
         sec_relevant_cols_opt => dbms_rls.ALL_ROWS
     );
 END;

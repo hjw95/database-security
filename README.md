@@ -11,7 +11,7 @@ Instruction, no guarantee it works. In general it should:
 1. Run DBCA\
 2. Create new database, uncheck create as container database\
 3. Click next not finish\
-4. Next until you need to check row level security\
+4. Next until you need to check row level security, don't check oracle database vault (mine is not checked, don't know if it will affect anything)\
 5. Complete create\
 6. Login as sys (sqlplus sys/dev@dbname as sysdba)\
 7. Run ALTER USER LBACSYS IDENTIFIED BY dev ACCOUNT UNLOCK;\

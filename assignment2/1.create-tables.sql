@@ -1,13 +1,7 @@
 ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE;
-ALTER SESSION SET CURRENT_SCHEMA = dev;
 
--- Run dbstart $ORACLE_HOME
--- sqlplus / as sysdba;
--- startup;
--- Save the file somewhere with some-name.sql
--- Run “sqlplus”, log in
--- Run “@some-name.sql”
--- Place to write scripts
+-- sqlplus lbacsys/dev@lbactest;
+
 -- Table Creation
 
 DROP    TABLE RoleMap;
@@ -91,9 +85,4 @@ CREATE  TABLE Bill (
     payment_date            timestamp       NOT NULL,
     student_id              varchar(100)    NOT NULL   
                             CONSTRAINT fkey_bill_student REFERENCES Student(student_id)
-);
-
-CREATE  TABLE RoleMap (
-    user_id                 varchar(100)    NOT NULL,
-    role_name               varchar(200)    NOT NULL
 );

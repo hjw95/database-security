@@ -1,15 +1,6 @@
 ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE;
 ALTER SESSION SET CURRENT_SCHEMA = dev;
 
--- Run dbstart $ORACLE_HOME
--- sqlplus / as sysdba;
--- startup;
--- Save the file somewhere with some-name.sql
--- Run “sqlplus”, log in
--- Run “@some-name.sql”
--- Place to write scripts
--- Table Creation
-
 DROP    TABLE RoleMap;
 DROP    TABLE Bill;
 DROP    TABLE Enrollment;

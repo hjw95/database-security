@@ -22,3 +22,10 @@ Instruction, no guarantee it works. In general it should:
 
 Hady's test db name --> lbactest
 
+1. Run dbstart $ORACLE_HOME
+2. sqlplus / as sysdba;
+3. startup;
+4. Save the file somewhere with some-name.sql
+5. Run “sqlplus”, log in
+6. Run “@some-name.sql”
+7. Place to write scripts

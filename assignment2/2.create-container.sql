@@ -1,6 +1,3 @@
-ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE;
-ALTER SESSION SET CURRENT_SCHEMA = dev;
-
 BEGIN
     SA_SYSDBA.DROP_POLICY (
         policy_name      => 'db_sec_ols_pol'

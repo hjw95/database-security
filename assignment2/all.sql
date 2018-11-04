@@ -5,3 +5,5 @@
 @5.create-group.sql;
 @6.create-label.sql;
 @7.apply-policy.sql;
+@8.create-user.sql;
+@9.entitle-user.sql;

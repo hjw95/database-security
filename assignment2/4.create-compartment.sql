@@ -19,7 +19,7 @@ BEGIN
   SA_COMPONENTS.CREATE_COMPARTMENT (
     policy_name     => 'db_sec_ols_pol',
     comp_num        => '1',
-    short_name      => 'RSH',
+    short_name      => 'RES',
     long_name       => 'RESEARCH'
   );
 

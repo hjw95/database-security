@@ -7,3 +7,4 @@
 @7.apply-policy.sql;
 @8.create-user.sql;
 @9.entitle-user.sql;
+@10.create-data.sql;

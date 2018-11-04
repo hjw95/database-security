@@ -1,10 +1,9 @@
-ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE;
+CONNECT dev/dev@lbactest;
 
 -- sqlplus lbacsys/dev@lbactest;
 
 -- Table Creation
 
-DROP    TABLE RoleMap;
 DROP    TABLE Bill;
 DROP    TABLE Enrollment;
 DROP    TABLE Course;

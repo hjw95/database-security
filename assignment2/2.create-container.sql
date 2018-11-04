@@ -1,3 +1,7 @@
+CONNECT lbacsys/dev@lbactest;
+
+ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE;
+
 BEGIN
     SA_SYSDBA.DROP_POLICY (
         policy_name      => 'db_sec_ols_pol'

@@ -39,27 +39,27 @@ BEGIN
         policy_name   => 'db_sec_ols_pol',
         user_name     => 'PUBLIC1', 
         max_level     => 'P',
-        min_level     => 'NULL',
-        def_level     => 'NULL',
-        row_level     => 'NULL'
+        min_level     => NULL,
+        def_level     => NULL,
+        row_level     => NULL
     );
 
     SA_USER_ADMIN.SET_COMPARTMENTS (
         policy_name   => 'db_sec_ols_pol',
         user_name     => 'PUBLIC1', 
         read_comps    => '',
-        write_comps   => 'NULL',
-        def_comps     => 'NULL',
-        row_comps     => 'NULL'
+        write_comps   => NULL,
+        def_comps     => NULL,
+        row_comps     => NULL
     );
 
     SA_USER_ADMIN.SET_GROUPS (
         policy_name    => 'db_sec_ols_pol',
         user_name      => 'PUBLIC1', 
         read_groups    => '',
-        write_groups   => 'NULL',
-        def_groups     => 'NULL',
-        row_groups     => 'NULL'
+        write_groups   => NULL,
+        def_groups     => NULL,
+        row_groups     => NULL
     );
 END;
 /
@@ -83,7 +83,7 @@ BEGIN
         read_comps    => 'LEC,RES,CS5001,LECTURE,STUSUB,EXAM',
         write_comps   => 'LEC,RES,CS5001,LECTURE,EXAM',
         def_comps     => 'LEC,RES,CS5001,LECTURE,STUSUB,EXAM',
-        row_comps     => 'NULL'
+        row_comps     => NULL
     );
 
     SA_USER_ADMIN.SET_GROUPS (
@@ -115,7 +115,7 @@ BEGIN
         read_comps    => 'LEC,RES,IS5001,LECTURE,STUSUB,EXAM',
         write_comps   => 'LEC,RES,IS5001,LECTURE,EXAM',
         def_comps     => 'LEC,RES,IS5001,LECTURE,STUSUB,EXAM',
-        row_comps     => 'NULL'
+        row_comps     => NULL
     );
 
     SA_USER_ADMIN.SET_GROUPS (
@@ -128,3 +128,4 @@ BEGIN
     );
 END;
 /
+

@@ -11,6 +11,7 @@ DROP    TABLE Student;
 DROP    TABLE Payroll;
 DROP    TABLE Staff;
 DROP    TABLE School;
+DROP	TABLE UniversityResource;
 
 CREATE  TABLE School (
     school_id               int             NOT NULL PRIMARY KEY,
@@ -85,3 +86,20 @@ CREATE  TABLE Bill (
     student_id              varchar(100)    NOT NULL   
                             CONSTRAINT fkey_bill_student REFERENCES Student(student_id)
 );
+
+
+CREATE  TABLE UniversityResource (
+   resource_id              int             NOT NULL PRIMARY KEY,
+   resource_name            varchar (100)   NOT NULL,
+   resource_format          varchar(10),
+   owner_staff_id           varchar (100)              
+			    CONSTRAINT fkey_universityresource_owner_staff REFERENCES Staff(staff_id),
+   owner_student_id         varchar (100)              
+			    CONSTRAINT fkey_universityresource_owner_student REFERENCES Student(student_id),
+   school_id                int             NOT NULL
+			    CONSTRAINT fkey_universityresource_school REFERENCES School(school_id)
+);
+
+
+
+

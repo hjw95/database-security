@@ -80,13 +80,6 @@ BEGIN
 
   SA_COMPONENTS.CREATE_COMPARTMENT (
     policy_name     => 'db_sec_ols_pol',
-    comp_num        => '2002',
-    short_name      => 'PROJ',
-    long_name       => 'PROJECT_GUIDELINE'
-  );
-
-  SA_COMPONENTS.CREATE_COMPARTMENT (
-    policy_name     => 'db_sec_ols_pol',
     comp_num        => '2003',
     short_name      => 'STUSUB',
     long_name       => 'STUDENT_SUBMISSION'

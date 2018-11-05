@@ -2,8 +2,8 @@ BEGIN
  SA_COMPONENTS.CREATE_LEVEL (
    policy_name   => 'db_sec_ols_pol',
    level_num     => 30,
-   short_name    => 'A',
-   long_name     => 'ADMINISTRATIVE');
+   short_name    => 'S',
+   long_name     => 'SENSITIVE');
 END;
 /
 

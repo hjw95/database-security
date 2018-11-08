@@ -15,26 +15,21 @@ VALUES (2, 'Durmstrang Institute', 'Northern Europe', 'Igor Karkaroff');
 INSERT INTO School (school_id, school_name, school_location, dean)
 VALUES (3, 'Ilvermorny School of Witchcraft and Wizardry', 'North America', 'Agilbert Fontaine');
 
--- LECTURER1
+-- LECTURER
 
 INSERT INTO Staff(staff_id, name, email, title, phone_number, office_location, salary, bank_account, school_id)
 VALUES ('LECTURER1', 'Filius Flitwick', 'filius@hogwarts.com', 'Charms', '91234353', 'Ravenclaw', 1111, '11111', 0);
 
--- LECTURER2
-
 INSERT INTO Staff(staff_id, name, email, title, phone_number, office_location, salary, bank_account, school_id)
 VALUES ('LECTURER2', 'Minerva McGonagall', 'minerva@hogwarts.com', 'Transfiguration', '9876654424', 'Gryffindor', 2222, '22222', 0);
 
--- Finance
 INSERT INTO Staff(staff_id, name, email, title, phone_number, office_location, salary, bank_account, school_id)
-VALUES ('FINANCE1', 'Severus Snape', 'finance1@hogwarts.com', 'fin officer 1', '98098656', 'Potions Lab', 4444, '4444444', 0);
+VALUES ('LECTURER3', 'Severus Snape', 'snape@hogwarts.com', 'Weird Guy', '98098656', 'Slytherin', 4444, '4444444', 0);
 
--- STUDENT1
+-- STUDENT
 
 INSERT INTO Student (student_id, name, email, gender, phone_number, admission_year, school_id)
 VALUES ('STUDENT1', 'Harry Potter', 'harry@test.com', 'male', '92345678', 3000, 0);
-
--- STUDENT2
 
 INSERT INTO Student (student_id, name, email, gender, phone_number, admission_year, school_id)
 VALUES ('STUDENT2', 'Hermione Granger', 'hermione@test.com', 'female', '99345678', 3000, 0);

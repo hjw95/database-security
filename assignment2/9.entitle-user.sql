@@ -15,10 +15,10 @@ BEGIN
     SA_USER_ADMIN.SET_COMPARTMENTS (
         policy_name   => 'db_sec_ols_pol',
         user_name     => 'dev', 
-        read_comps    => 'RES,LEC,STU,FIN,HR,CR001,CR002,LECTURE,STUSUB,EXAM',
-        write_comps   => 'RES,LEC,STU,FIN,HR,CR001,CR002,LECTURE,STUSUB,EXAM',
-        def_comps     => 'RES,LEC,STU,FIN,HR,CR001,CR002,LECTURE,STUSUB,EXAM',
-        row_comps     => 'RES,LEC,STU,FIN,HR,CR001,CR002,LECTURE,STUSUB,EXAM'
+        read_comps    => 'RES,LEC,STU,FIN,HRS,CR001,CR002,LECT,SUBM,EXAM',
+        write_comps   => 'RES,LEC,STU,FIN,HRS,CR001,CR002,LECT,SUBM,EXAM',
+        def_comps     => 'RES,LEC,STU,FIN,HRS,CR001,CR002,LECT,SUBM,EXAM',
+        row_comps     => 'RES,LEC,STU,FIN,HRS,CR001,CR002,LECT,SUBM,EXAM'
     );
 
     SA_USER_ADMIN.SET_GROUPS (
@@ -80,9 +80,9 @@ BEGIN
     SA_USER_ADMIN.SET_COMPARTMENTS (
         policy_name   => 'db_sec_ols_pol',
         user_name     => 'LECTURER1', 
-        read_comps    => 'LEC,RES,CR001,LECTURE,STUSUB,EXAM',
-        write_comps   => 'LEC,RES,CR001,LECTURE,EXAM',
-        def_comps     => 'LEC,RES,CR001,LECTURE,STUSUB,EXAM',
+        read_comps    => 'LEC,RES,CR001,LECT,SUBM,EXAM',
+        write_comps   => 'LEC,RES,CR001,LECT,EXAM',
+        def_comps     => 'LEC,RES,CR001,LECT,SUBM,EXAM',
         row_comps     => NULL
     );
 
@@ -112,9 +112,9 @@ BEGIN
     SA_USER_ADMIN.SET_COMPARTMENTS (
         policy_name   => 'db_sec_ols_pol',
         user_name     => 'LECTURER2', 
-        read_comps    => 'LEC,RES,CR002,LECTURE,STUSUB,EXAM',
-        write_comps   => 'LEC,RES,CR002,LECTURE,EXAM',
-        def_comps     => 'LEC,RES,CR002,LECTURE,STUSUB,EXAM',
+        read_comps    => 'LEC,RES,CR002,LECT,SUBM,EXAM',
+        write_comps   => 'LEC,RES,CR002,LECT,EXAM',
+        def_comps     => 'LEC,RES,CR002,LECT,SUBM,EXAM',
         row_comps     => NULL
     );
 

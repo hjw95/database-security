@@ -4,7 +4,7 @@ BEGIN
     SA_LABEL_ADMIN.CREATE_LABEL  (
         policy_name     => 'db_sec_ols_pol',
         label_tag       => '2001',
-        label_value     => 'C:CR001,STUSUB:HOG',
+        label_value     => 'C:CR001,SUBM:HOG',
         data_label      => TRUE
     );
 
@@ -20,7 +20,7 @@ BEGIN
     SA_LABEL_ADMIN.CREATE_LABEL  (
         policy_name     => 'db_sec_ols_pol',
         label_tag       => '2003',
-        label_value     => 'C:CR001,LECTURE:HOG',
+        label_value     => 'C:CR001,LECT:HOG',
         data_label      => TRUE
     );
 

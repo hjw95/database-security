@@ -15,6 +15,8 @@
 --  SUBMISSION
 --  EXAMINATION
 
+-- 03xxx - house
+
 BEGIN
   SA_COMPONENTS.CREATE_COMPARTMENT (
     policy_name     => 'db_sec_ols_pol',
@@ -47,7 +49,7 @@ BEGIN
   SA_COMPONENTS.CREATE_COMPARTMENT (
     policy_name     => 'db_sec_ols_pol',
     comp_num        => '5',
-    short_name      => 'HR',
+    short_name      => 'HRS',
     long_name       => 'HUMAN_RESOURCES'
   );
 END;
@@ -95,14 +97,14 @@ BEGIN
   SA_COMPONENTS.CREATE_COMPARTMENT (
     policy_name     => 'db_sec_ols_pol',
     comp_num        => '2001',
-    short_name      => 'LECTURE',
+    short_name      => 'LECT',
     long_name       => 'LECTURE_MATERIAL'
   );
 
   SA_COMPONENTS.CREATE_COMPARTMENT (
     policy_name     => 'db_sec_ols_pol',
     comp_num        => '2003',
-    short_name      => 'STUSUB',
+    short_name      => 'SUBM',
     long_name       => 'STUDENT_SUBMISSION'
   );
 
@@ -111,6 +113,37 @@ BEGIN
     comp_num        => '2004',
     short_name      => 'EXAM',
     long_name       => 'EXAMINATION_PAPER'
+  );
+END;
+/
+
+BEGIN
+  SA_COMPONENTS.CREATE_COMPARTMENT (
+    policy_name     => 'db_sec_ols_pol',
+    comp_num        => '3001',
+    short_name      => 'GRYS',
+    long_name       => 'GRYFFINDOR SECRET'
+  );
+
+  SA_COMPONENTS.CREATE_COMPARTMENT (
+    policy_name     => 'db_sec_ols_pol',
+    comp_num        => '3002',
+    short_name      => 'HUFS',
+    long_name       => 'HUFFLEPUFF SECRET'
+  );
+
+  SA_COMPONENTS.CREATE_COMPARTMENT (
+    policy_name     => 'db_sec_ols_pol',
+    comp_num        => '3003',
+    short_name      => 'RAVS',
+    long_name       => 'RAVENCLAW SECRET'
+  );
+
+  SA_COMPONENTS.CREATE_COMPARTMENT (
+    policy_name     => 'db_sec_ols_pol',
+    comp_num        => '3004',
+    short_name      => 'SLYS',
+    long_name       => 'SLYTHERIN SECRET'
   );
 END;
 /

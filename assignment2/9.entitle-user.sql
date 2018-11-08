@@ -80,8 +80,8 @@ BEGIN
     SA_USER_ADMIN.SET_COMPARTMENTS (
         policy_name   => 'db_sec_ols_pol',
         user_name     => 'LECTURER1', 
-        read_comps    => 'LEC,RES,CR001,LECT,SUBM,EXAM',
-        write_comps   => 'LEC,RES,CR001,LECT,EXAM',
+        read_comps    => 'LEC,RES,CR001,LECT,SUBM,EXAM,HUFS',
+        write_comps   => 'LEC,RES,CR001,LECT,EXAM,HUFS',
         def_comps     => 'LEC,RES,CR001,LECT,SUBM,EXAM',
         row_comps     => NULL
     );
@@ -112,8 +112,8 @@ BEGIN
     SA_USER_ADMIN.SET_COMPARTMENTS (
         policy_name   => 'db_sec_ols_pol',
         user_name     => 'LECTURER2', 
-        read_comps    => 'LEC,RES,CR002,LECT,SUBM,EXAM',
-        write_comps   => 'LEC,RES,CR002,LECT,EXAM',
+        read_comps    => 'LEC,RES,CR002,LECT,SUBM,EXAM,GRYS,SLYS',
+        write_comps   => 'LEC,RES,CR002,LECT,EXAM,GRYS,SLYS',
         def_comps     => 'LEC,RES,CR002,LECT,SUBM,EXAM',
         row_comps     => NULL
     );
@@ -129,3 +129,33 @@ BEGIN
 END;
 /
 
+-- LECTURER3 (IS5001)
+BEGIN
+    SA_USER_ADMIN.SET_LEVELS (
+        policy_name   => 'db_sec_ols_pol',
+        user_name     => 'LECTURER3', 
+        max_level     => 'S',
+        min_level     => 'P',
+        def_level     => 'C',
+        row_level     => 'C'
+    );
+
+    SA_USER_ADMIN.SET_COMPARTMENTS (
+        policy_name   => 'db_sec_ols_pol',
+        user_name     => 'LECTURER3', 
+        read_comps    => 'LEC,RES,CR002,LECT,SUBM,EXAM,SLYS',
+        write_comps   => 'LEC,RES,CR002,LECT,EXAM,SLYS',
+        def_comps     => 'LEC,RES,CR002,LECT,SUBM,EXAM',
+        row_comps     => NULL
+    );
+
+    SA_USER_ADMIN.SET_GROUPS (
+        policy_name    => 'db_sec_ols_pol',
+        user_name      => 'LECTURER3', 
+        read_groups    => 'HOG,SLY',
+        write_groups   => 'SLY',
+        def_groups     => 'HOG,SLY',
+        row_groups     => 'SLY'
+    );
+END;
+/

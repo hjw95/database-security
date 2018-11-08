@@ -15,10 +15,10 @@ BEGIN
     SA_USER_ADMIN.SET_COMPARTMENTS (
         policy_name   => 'db_sec_ols_pol',
         user_name     => 'dev', 
-        read_comps    => 'RES,LEC,STU,FIN,HRS,CR001,CR002,LECT,SUBM,EXAM',
-        write_comps   => 'RES,LEC,STU,FIN,HRS,CR001,CR002,LECT,SUBM,EXAM',
-        def_comps     => 'RES,LEC,STU,FIN,HRS,CR001,CR002,LECT,SUBM,EXAM',
-        row_comps     => 'RES,LEC,STU,FIN,HRS,CR001,CR002,LECT,SUBM,EXAM'
+        read_comps    => 'RES,LEC,STU,FIN,HRS,CR001,CR002,LECT,SUBM,EXAM,GRYS,HUFS,RAVS,SLYS',
+        write_comps   => 'RES,LEC,STU,FIN,HRS,CR001,CR002,LECT,SUBM,EXAM,GRYS,HUFS,RAVS,SLYS',
+        def_comps     => 'RES,LEC,STU,FIN,HRS,CR001,CR002,LECT,SUBM,EXAM,GRYS,HUFS,RAVS,SLYS',
+        row_comps     => 'RES,LEC,STU,FIN,HRS,CR001,CR002,LECT,SUBM,EXAM,GRYS,HUFS,RAVS,SLYS'
     );
 
     SA_USER_ADMIN.SET_GROUPS (

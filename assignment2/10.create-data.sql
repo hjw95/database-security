@@ -70,6 +70,23 @@ VALUES (1004, 'MARAUDER''S MAP', 'PDF',  NULL, CHAR_TO_LABEL('db_sec_ols_pol','S
 
 -------------------------------------------------------------------------------------------------
 
+INSERT INTO universityresource (RESOURCE_ID, RESOURCE_NAME, RESOURCE_FORMAT, OWNER_ID, ols_col)
+VALUES (2001, 'PLANS TO CAPTURE HARRY POTTER', 'PDF',  NULL, CHAR_TO_LABEL('db_sec_ols_pol','S:RES,SLYS:SLY'));
+
+INSERT INTO universityresource (RESOURCE_ID, RESOURCE_NAME, RESOURCE_FORMAT, OWNER_ID, ols_col)
+VALUES (2002, 'HARRY POTTER DARK SECRETS', 'PDF',  NULL, CHAR_TO_LABEL('db_sec_ols_pol','S:RES,SLYS:SLY'));
+
+INSERT INTO universityresource (RESOURCE_ID, RESOURCE_NAME, RESOURCE_FORMAT, OWNER_ID, ols_col)
+VALUES (2003, 'GRYFFINDOR WEAKNESSES RESEARCH', 'PDF',  NULL, CHAR_TO_LABEL('db_sec_ols_pol','S:RES,SLYS:SLY'));
+
+INSERT INTO universityresource (RESOURCE_ID, RESOURCE_NAME, RESOURCE_FORMAT, OWNER_ID, ols_col)
+VALUES (2004, 'GRYFFINDOR STYLE QUIDDITCH', 'MP4',  NULL, CHAR_TO_LABEL('db_sec_ols_pol','S:RES,GRYS:GRY'));
+
+INSERT INTO universityresource (RESOURCE_ID, RESOURCE_NAME, RESOURCE_FORMAT, OWNER_ID, ols_col)
+VALUES (2005, 'DUMBLEDORE OWNS THE ELDER WAND', 'JPEG',  NULL, CHAR_TO_LABEL('db_sec_ols_pol','S:SLYS:GRY'));
+
+-------------------------------------------------------------------------------------------------
+
 
  
 

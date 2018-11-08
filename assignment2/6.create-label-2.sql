@@ -22,15 +22,31 @@ BEGIN
 	-- AN UNPUBLISHED RESEARCH PAPER 
     SA_LABEL_ADMIN.CREATE_LABEL  (
         policy_name     => 'db_sec_ols_pol',
-        label_tag       => '2004',
+        label_tag       => '2003',
         label_value     => 'S:RES:HOG',
+        data_label      => TRUE
+    );	
+
+    -- GRYFFINDOR SECRET RESEARCH
+    SA_LABEL_ADMIN.CREATE_LABEL  (
+        policy_name     => 'db_sec_ols_pol',
+        label_tag       => '2004',
+        label_value     => 'S:RES,GRYS:GRY',
+        data_label      => TRUE
+    );	
+
+    -- SLYTHERIN SPY IN GRYFFINDOR
+    SA_LABEL_ADMIN.CREATE_LABEL  (
+        policy_name     => 'db_sec_ols_pol',
+        label_tag       => '2005',
+        label_value     => 'S:SLYS:GRY',
         data_label      => TRUE
     );	
 
     -- SLYTHERIN SECRET RESEARCH
     SA_LABEL_ADMIN.CREATE_LABEL  (
         policy_name     => 'db_sec_ols_pol',
-        label_tag       => '2005',
+        label_tag       => '2006',
         label_value     => 'S:RES,SLYS:SLY',
         data_label      => TRUE
     );	

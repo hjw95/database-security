@@ -15,19 +15,19 @@ BEGIN
     SA_USER_ADMIN.SET_COMPARTMENTS (
         policy_name   => 'db_sec_ols_pol',
         user_name     => 'dev', 
-        read_comps    => 'RES,LEC,STU,FIN,HR,IS5001,CS5001,LECTURE,STUSUB,EXAM',
-        write_comps   => 'RES,LEC,STU,FIN,HR,IS5001,CS5001,LECTURE,STUSUB,EXAM',
-        def_comps     => 'RES,LEC,STU,FIN,HR,IS5001,CS5001,LECTURE,STUSUB,EXAM',
-        row_comps     => 'RES,LEC,STU,FIN,HR,IS5001,CS5001,LECTURE,STUSUB,EXAM'
+        read_comps    => 'RES,LEC,STU,FIN,HR,CR001,CR002,LECTURE,STUSUB,EXAM',
+        write_comps   => 'RES,LEC,STU,FIN,HR,CR001,CR002,LECTURE,STUSUB,EXAM',
+        def_comps     => 'RES,LEC,STU,FIN,HR,CR001,CR002,LECTURE,STUSUB,EXAM',
+        row_comps     => 'RES,LEC,STU,FIN,HR,CR001,CR002,LECTURE,STUSUB,EXAM'
     );
 
     SA_USER_ADMIN.SET_GROUPS (
         policy_name    => 'db_sec_ols_pol',
         user_name      => 'dev', 
-        read_groups    => 'SOC,CS,IS,SEC,SOB',
-        write_groups   => 'SOC,CS,IS,SEC,SOB',
-        def_groups     => 'SOC,CS,IS,SEC,SOB',
-        row_groups     => 'SOC,CS,IS,SEC,SOB'
+        read_groups    => 'HOG,GRY,HUF,RAV,SLY,BEA',
+        write_groups   => 'HOG,GRY,HUF,RAV,SLY,BEA',
+        def_groups     => 'HOG,GRY,HUF,RAV,SLY,BEA',
+        row_groups     => 'HOG,GRY,HUF,RAV,SLY,BEA'
     );
 END;
 /
@@ -80,19 +80,19 @@ BEGIN
     SA_USER_ADMIN.SET_COMPARTMENTS (
         policy_name   => 'db_sec_ols_pol',
         user_name     => 'LECTURER1', 
-        read_comps    => 'LEC,RES,CS5001,LECTURE,STUSUB,EXAM',
-        write_comps   => 'LEC,RES,CS5001,LECTURE,EXAM',
-        def_comps     => 'LEC,RES,CS5001,LECTURE,STUSUB,EXAM',
+        read_comps    => 'LEC,RES,CR001,LECTURE,STUSUB,EXAM',
+        write_comps   => 'LEC,RES,CR001,LECTURE,EXAM',
+        def_comps     => 'LEC,RES,CR001,LECTURE,STUSUB,EXAM',
         row_comps     => NULL
     );
 
     SA_USER_ADMIN.SET_GROUPS (
         policy_name    => 'db_sec_ols_pol',
         user_name      => 'LECTURER1', 
-        read_groups    => 'SOC,CS',
-        write_groups   => 'CS',
-        def_groups     => 'SOC,CS',
-        row_groups     => 'CS'
+        read_groups    => 'HOG,HUF',
+        write_groups   => 'HUF',
+        def_groups     => 'HOG,HUF',
+        row_groups     => 'HUF'
     );
 END;
 /
@@ -112,19 +112,19 @@ BEGIN
     SA_USER_ADMIN.SET_COMPARTMENTS (
         policy_name   => 'db_sec_ols_pol',
         user_name     => 'LECTURER2', 
-        read_comps    => 'LEC,RES,IS5001,LECTURE,STUSUB,EXAM',
-        write_comps   => 'LEC,RES,IS5001,LECTURE,EXAM',
-        def_comps     => 'LEC,RES,IS5001,LECTURE,STUSUB,EXAM',
+        read_comps    => 'LEC,RES,CR002,LECTURE,STUSUB,EXAM',
+        write_comps   => 'LEC,RES,CR002,LECTURE,EXAM',
+        def_comps     => 'LEC,RES,CR002,LECTURE,STUSUB,EXAM',
         row_comps     => NULL
     );
 
     SA_USER_ADMIN.SET_GROUPS (
         policy_name    => 'db_sec_ols_pol',
         user_name      => 'LECTURER2', 
-        read_groups    => 'SOC,IS',
-        write_groups   => 'IS',
-        def_groups     => 'SOC,IS',
-        row_groups     => 'IS'
+        read_groups    => 'HOG,GRY',
+        write_groups   => 'GRY',
+        def_groups     => 'HOG,GRY',
+        row_groups     => 'GRY'
     );
 END;
 /

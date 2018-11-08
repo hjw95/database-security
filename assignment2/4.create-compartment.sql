@@ -6,8 +6,8 @@
 --  HUMAN RESOURCES
 
 -- 01xxx - courses
---  CS5001
---  IS5001
+--  CR001
+--  CR002
 
 -- 02xxx - course material types
 --  LECTURE
@@ -57,15 +57,36 @@ BEGIN
   SA_COMPONENTS.CREATE_COMPARTMENT (
     policy_name     => 'db_sec_ols_pol',
     comp_num        => '1001',
-    short_name      => 'IS5001',
-    long_name       => 'IS5001'
+    short_name      => 'CR001',
+    long_name       => 'ASTRONOMY'
   );
 
   SA_COMPONENTS.CREATE_COMPARTMENT (
     policy_name     => 'db_sec_ols_pol',
     comp_num        => '1002',
-    short_name      => 'CS5001',
-    long_name       => 'CS5001'
+    short_name      => 'CR002',
+    long_name       => 'CHARMS'
+  );
+
+  SA_COMPONENTS.CREATE_COMPARTMENT (
+    policy_name     => 'db_sec_ols_pol',
+    comp_num        => '1003',
+    short_name      => 'CR003',
+    long_name       => 'DARK ARTS'
+  );
+
+  SA_COMPONENTS.CREATE_COMPARTMENT (
+    policy_name     => 'db_sec_ols_pol',
+    comp_num        => '1004',
+    short_name      => 'CR004',
+    long_name       => 'FLYING'
+  );
+
+  SA_COMPONENTS.CREATE_COMPARTMENT (
+    policy_name     => 'db_sec_ols_pol',
+    comp_num        => '1005',
+    short_name      => 'CR005',
+    long_name       => 'HERBOLOGY'
   );
 END;
 /

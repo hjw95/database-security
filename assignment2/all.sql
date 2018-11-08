@@ -3,7 +3,8 @@
 @3.create-levels.sql;
 @4.create-compartment.sql;
 @5.create-group.sql;
-@6.create-label.sql;
+@6.create-label-1.sql;
+@6.create-label-2.sql;
 @7.apply-policy.sql;
 @8.create-user.sql;
 @9.entitle-user.sql;

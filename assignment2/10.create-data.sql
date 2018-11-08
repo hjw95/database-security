@@ -37,19 +37,39 @@ VALUES ('STUDENT2', 'Hermione Granger', 'hermione@test.com', 'female', '99345678
 -- UNIVERSITY RESOURCE
 
 INSERT INTO universityresource (RESOURCE_ID, RESOURCE_NAME, RESOURCE_FORMAT, OWNER_ID, ols_col)
-VALUES (1, 'CR001 EXAM PAPER',          'PDF',  'LECTURER1',    CHAR_TO_LABEL('db_sec_ols_pol','S:CR001,EXAM:HOG'));
+VALUES (1, 'CR001 EXAM PAPER', 'PDF', 'LECTURER1', CHAR_TO_LABEL('db_sec_ols_pol','S:CR001,EXAM:HOG'));
 
 INSERT INTO universityresource (RESOURCE_ID, RESOURCE_NAME, RESOURCE_FORMAT, OWNER_ID, ols_col)
-VALUES (2, 'CR001 STUDENT SUBMISSION',  'DOC',  'STUDENT1',     CHAR_TO_LABEL('db_sec_ols_pol','C:CR001,SUBM:HOG'));
+VALUES (2, 'CR001 STUDENT SUBMISSION', 'DOC',  'STUDENT1', CHAR_TO_LABEL('db_sec_ols_pol','C:CR001,SUBM:GRY'));
 
 INSERT INTO universityresource (RESOURCE_ID, RESOURCE_NAME, RESOURCE_FORMAT, OWNER_ID, ols_col)
-VALUES (3, 'RESEARCH PAPER',            'DOC',  'STUDENT1',     CHAR_TO_LABEL('db_sec_ols_pol','S:RES:HOG'));
+VALUES (3, 'RESEARCH PAPER', 'DOC', 'STUDENT1', CHAR_TO_LABEL('db_sec_ols_pol','S:RES:HOG'));
 
 INSERT INTO universityresource (RESOURCE_ID, RESOURCE_NAME, RESOURCE_FORMAT, OWNER_ID, ols_col)
-VALUES (4, 'CR001 LECTURE NOTE 1',      'PPTX', 'LECTURER1',    CHAR_TO_LABEL('db_sec_ols_pol','C:CR001,LECT:HOG'));
+VALUES (4, 'CR001 LECTURE NOTE 1', 'PPTX', 'LECTURER1', CHAR_TO_LABEL('db_sec_ols_pol','C:CR001,LECT:HOG'));
 
 INSERT INTO universityresource (RESOURCE_ID, RESOURCE_NAME, RESOURCE_FORMAT, OWNER_ID, ols_col)
-VALUES (5, 'HOGWARTS EVENT BROCHURE',   'PDF',  NULL,           CHAR_TO_LABEL('db_sec_ols_pol','P::HOG'));
+VALUES (5, 'HOGWARTS EVENT BROCHURE', 'PDF',  NULL, CHAR_TO_LABEL('db_sec_ols_pol','P::HOG'));
 
 INSERT INTO universityresource (RESOURCE_ID, RESOURCE_NAME, RESOURCE_FORMAT, OWNER_ID, ols_col)
-VALUES (6, 'PUBLIC NEWS',               'PDF',  NULL,           CHAR_TO_LABEL('db_sec_ols_pol','P'));
+VALUES (6, 'PUBLIC NEWS', 'PDF',  NULL, CHAR_TO_LABEL('db_sec_ols_pol','P'));
+
+-------------------------------------------------------------------------------------------------
+
+INSERT INTO universityresource (RESOURCE_ID, RESOURCE_NAME, RESOURCE_FORMAT, OWNER_ID, ols_col)
+VALUES (1001, 'IDIOT GUIDE TO FLYING WITH BROOMSTICK', 'PDF',  NULL, CHAR_TO_LABEL('db_sec_ols_pol','C::HOG'));
+
+INSERT INTO universityresource (RESOURCE_ID, RESOURCE_NAME, RESOURCE_FORMAT, OWNER_ID, ols_col)
+VALUES (1002, 'DARK ARTS DEFENSE BASICS', 'PDF',  NULL, CHAR_TO_LABEL('db_sec_ols_pol','C::HOG'));
+
+INSERT INTO universityresource (RESOURCE_ID, RESOURCE_NAME, RESOURCE_FORMAT, OWNER_ID, ols_col)
+VALUES (1003, 'POLIJUICE POTION GUIDE', 'PDF',  NULL, CHAR_TO_LABEL('db_sec_ols_pol','S::HOG'));
+
+INSERT INTO universityresource (RESOURCE_ID, RESOURCE_NAME, RESOURCE_FORMAT, OWNER_ID, ols_col)
+VALUES (1004, 'MARAUDER''S MAP', 'PDF',  NULL, CHAR_TO_LABEL('db_sec_ols_pol','S::HOG'));
+
+-------------------------------------------------------------------------------------------------
+
+
+ 
+

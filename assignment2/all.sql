@@ -9,3 +9,4 @@
 @8.create-user.sql;
 @9.entitle-user.sql;
 @10.create-data.sql;
+@11.create-rls.sql;

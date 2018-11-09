@@ -2,11 +2,7 @@ CONNECT dev/dev@lbactest;
 
 -- Table Creation
 
-DROP    TABLE Bill                  CASCADE CONSTRAINTS;
-DROP    TABLE Enrollment            CASCADE CONSTRAINTS;
-DROP    TABLE Course                CASCADE CONSTRAINTS;
 DROP    TABLE Student               CASCADE CONSTRAINTS;
-DROP    TABLE Payroll               CASCADE CONSTRAINTS;
 DROP    TABLE Staff                 CASCADE CONSTRAINTS;
 DROP    TABLE School                CASCADE CONSTRAINTS;
 DROP	TABLE UniversityResource    CASCADE CONSTRAINTS;

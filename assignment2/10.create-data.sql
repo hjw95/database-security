@@ -54,6 +54,9 @@ VALUES (5, 'HOGWARTS EVENT BROCHURE', 'PDF',  NULL, CHAR_TO_LABEL('db_sec_ols_po
 INSERT INTO universityresource (RESOURCE_ID, RESOURCE_NAME, RESOURCE_FORMAT, OWNER_ID, ols_col)
 VALUES (6, 'PUBLIC NEWS', 'PDF',  NULL, CHAR_TO_LABEL('db_sec_ols_pol','P'));
 
+INSERT INTO universityresource (RESOURCE_ID, RESOURCE_NAME, RESOURCE_FORMAT, OWNER_ID, ols_col)
+VALUES (7, 'CR002 LECTURE NOTE 1', 'PPTX', 'LECTURER2', CHAR_TO_LABEL('db_sec_ols_pol','C:CR002,LECT:HOG'));
+
 -------------------------------------------------------------------------------------------------
 
 INSERT INTO universityresource (RESOURCE_ID, RESOURCE_NAME, RESOURCE_FORMAT, OWNER_ID, ols_col)

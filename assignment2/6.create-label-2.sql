@@ -17,6 +17,22 @@ BEGIN
         data_label      => TRUE
     );
 
+	-- AN UPCOMING EXAM PAPER (CR002)
+    SA_LABEL_ADMIN.CREATE_LABEL  (
+        policy_name     => 'db_sec_ols_pol',
+        label_tag       => '2011',
+        label_value     => 'S:CR002,EXAM:HOG',
+        data_label      => TRUE
+    );
+
+	-- A LECTURE MATERIAL (CR001)
+    SA_LABEL_ADMIN.CREATE_LABEL  (
+        policy_name     => 'db_sec_ols_pol',
+        label_tag       => '2010',
+        label_value     => 'C:CR002,LECT:HOG',
+        data_label      => TRUE
+    );
+
 -------------------------------------------------------------------------------------------------
 
 	-- AN UNPUBLISHED RESEARCH PAPER 

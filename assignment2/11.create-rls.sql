@@ -20,6 +20,23 @@ BEGIN
 END;
 /
 
+CREATE OR REPLACE FUNCTION rls_staff(v_schema IN VARCHAR2, v_obj IN VARCHAR2)
+RETURN VARCHAR2 IS condition VARCHAR2(200);
+BEGIN
+    DECLARE
+        staff_count INT;
+    BEGIN
+        SELECT COUNT(*) INTO staff_count FROM dev.Staff WHERE staff_id = SYS_CONTEXT('USERENV', 'SESSION_USER');
+        IF staff_count > 0 THEN
+            condition := '(owner_id = SYS_CONTEXT(''USERENV'', ''SESSION_USER'') OR owner_id IS NULL OR owner_id IN (SELECT student_id FROM dev.Student))';
+        ELSE
+            condition := '';
+        END IF;
+        RETURN condition;
+    END;
+END;
+/
+
 BEGIN
     DBMS_RLS.ADD_POLICY(
         object_schema => 'dev',
@@ -27,6 +44,17 @@ BEGIN
         policy_name => 'rls_student_universityresource',
         function_schema => 'dev',
         policy_function => 'rls_student'
+    );
+END;
+/
+
+BEGIN
+    DBMS_RLS.ADD_POLICY(
+        object_schema => 'dev',
+        object_name => 'UniversityResource',
+        policy_name => 'rls_staff_universityresource',
+        function_schema => 'dev',
+        policy_function => 'rls_staff'
     );
 END;
 /

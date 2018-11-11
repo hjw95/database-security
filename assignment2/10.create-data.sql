@@ -94,6 +94,7 @@ VALUES (2005, 'DUMBLEDORE OWNS THE ELDER WAND', 'JPEG',  NULL, CHAR_TO_LABEL('db
 
 -------------------------------------------------------------------------------------------------
 
-
+INSERT INTO universityresource (RESOURCE_ID, RESOURCE_NAME, RESOURCE_FORMAT, OWNER_ID, ols_col)
+VALUES (3001, 'BEAUXBATONS COURSE OFFERING', 'JPEG',  NULL, CHAR_TO_LABEL('db_sec_ols_pol','P::BEA'));
  
 

@@ -11,7 +11,7 @@ BEGIN
         policy_name    => 'db_sec_ols_pol',
         schema_name    => 'dev', 
         table_name     => 'UniversityResource',
-        table_options  => 'READ_CONTROL,WRITE_CONTROL,CHECK_CONTROL'
+        table_options  => 'READ_CONTROL,WRITE_CONTROL,CHECK_CONTROL,label_update'
     );
 
 

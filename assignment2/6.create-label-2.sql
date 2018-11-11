@@ -128,9 +128,15 @@ BEGIN
         label_tag       => '3002',
         label_value     => 'S::HOG',
         data_label      => TRUE
-    );	
+    );
 
 -------------------------------------------------------------------------------------------------
-
+    -- BEAUXBATONS E-LIBRARY
+    SA_LABEL_ADMIN.CREATE_LABEL  (
+        policy_name     => 'db_sec_ols_pol',
+        label_tag       => '4001',
+        label_value     => 'P::BEA',
+        data_label      => TRUE
+    );
 END;
 /

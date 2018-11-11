@@ -89,7 +89,7 @@ BEGIN
     SA_USER_ADMIN.SET_GROUPS (
         policy_name    => 'db_sec_ols_pol',
         user_name      => 'LECTURER1', 
-        read_groups    => 'HOG,GRY',
+        read_groups    => 'HOG,GRY,BEA',
         write_groups   => 'HOG,GRY',
         def_groups     => 'HOG,GRY',
         row_groups     => 'GRY'

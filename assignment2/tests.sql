@@ -34,3 +34,8 @@ WHERE Resource_id = 1004;
 
 CONN public1/dev@lbactest;
 SELECT * FROM dev.UniversityResource;
+
+CONN lecturer1/dev@lbactest;
+UPDATE dev.UniversityResource
+SET ols_col = CHAR_TO_LABEL('db_sec_ols_pol','P:CR001,SUBM:GRY')
+WHERE Resource_id = 2;

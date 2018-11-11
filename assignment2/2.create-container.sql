@@ -13,7 +13,7 @@ BEGIN
     SA_SYSDBA.CREATE_POLICY (
         policy_name      => 'db_sec_ols_pol',
         column_name      => 'ols_col',
-        default_options  => 'read_control, write_control'
+        default_options  => 'read_control, write_control, label_update'
     );
 END;
 /

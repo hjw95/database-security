@@ -13,6 +13,20 @@ BEGIN
 
     SA_LABEL_ADMIN.CREATE_LABEL  (
         policy_name     => 'db_sec_ols_pol',
+        label_tag       => '1005',
+        label_value     => 'S:CR001,SUBM:GRY',
+        data_label      => TRUE
+    );
+
+    SA_LABEL_ADMIN.CREATE_LABEL  (
+        policy_name     => 'db_sec_ols_pol',
+        label_tag       => '1006',
+        label_value     => 'P:CR001,SUBM:GRY',
+        data_label      => TRUE
+    );
+
+    SA_LABEL_ADMIN.CREATE_LABEL  (
+        policy_name     => 'db_sec_ols_pol',
         label_tag       => '1002',
         label_value     => 'C:CR001,SUBM:HUF',
         data_label      => TRUE

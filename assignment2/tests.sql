@@ -25,10 +25,6 @@ SET Resource_name = 'UPDATED GRYFFINDOR STYLE QUIDDITCH'
 WHERE Resource_id=2004;
 
 UPDATE dev.UniversityResource
-SET Resource_name ='UPDATED CR001 STUDENT SUBMISSION'
-WHERE Resource_id = 2;
-
-UPDATE dev.UniversityResource
 SET Resource_name ='UPDATED BEAUXBATONS MAP'
 WHERE Resource_id = 3001;
 
@@ -38,6 +34,14 @@ SELECT Resource_id, Resource_name, Resource_format, Owner_id, LABEL_TO_CHAR (Ols
 
 UPDATE  dev.UniversityResource
 SET     ols_col = CHAR_TO_LABEL('db_sec_ols_pol','C:CR001,EXAM:HOG')
+WHERE   Resource_Id = 1;
+
+UPDATE  dev.UniversityResource
+SET     ols_col = CHAR_TO_LABEL('db_sec_ols_pol','S:CR001,EXAM:HOG')
+WHERE   Resource_Id = 1;
+
+UPDATE  dev.UniversityResource
+SET     ols_col = CHAR_TO_LABEL('db_sec_ols_pol','C:CR002,EXAM:HOG')
 WHERE   Resource_Id = 1;
 
 

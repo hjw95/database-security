@@ -9,6 +9,20 @@ BEGIN
         data_label      => TRUE
     );
 
+    SA_LABEL_ADMIN.CREATE_LABEL  (
+        policy_name     => 'db_sec_ols_pol',
+        label_tag       => '2012',
+        label_value     => 'C:CR001,EXAM:HOG',
+        data_label      => TRUE
+    );
+
+    SA_LABEL_ADMIN.CREATE_LABEL  (
+        policy_name     => 'db_sec_ols_pol',
+        label_tag       => '2013',
+        label_value     => 'P:CR001,EXAM:HOG',
+        data_label      => TRUE
+    );
+
 	-- A LECTURE MATERIAL (CR001)
     SA_LABEL_ADMIN.CREATE_LABEL  (
         policy_name     => 'db_sec_ols_pol',
@@ -40,6 +54,13 @@ BEGIN
         policy_name     => 'db_sec_ols_pol',
         label_tag       => '2003',
         label_value     => 'S:RES:HOG',
+        data_label      => TRUE
+    );	
+
+    SA_LABEL_ADMIN.CREATE_LABEL  (
+        policy_name     => 'db_sec_ols_pol',
+        label_tag       => '2014',
+        label_value     => 'C:RES:HOG',
         data_label      => TRUE
     );	
 

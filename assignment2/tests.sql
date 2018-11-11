@@ -14,6 +14,8 @@ END;
 
 SELECT SA_SESSION.LABEL ('db_sec_ols_pol') FROM DUAL;
 
+SELECT SA_SESSION.PRIVS ('db_sec_ols_pol') FROM DUAL;
+
 SELECT * FROM dev.UniversityResource;
 
 UPDATE dev.UniversityResource
@@ -35,7 +37,26 @@ WHERE Resource_id = 1004;
 CONN public1/dev@lbactest;
 SELECT * FROM dev.UniversityResource;
 
+
+
 CONN lecturer1/dev@lbactest;
-UPDATE dev.UniversityResource
-SET ols_col = CHAR_TO_LABEL('db_sec_ols_pol','P:CR001,SUBM:GRY')
-WHERE Resource_id = 2;
+
+SELECT SA_SESSION.LABEL ('db_sec_ols_pol') FROM DUAL;
+
+SELECT SA_SESSION.PRIVS ('db_sec_ols_pol') FROM DUAL;
+
+BEGIN
+    SA_SESSION.SET_LABEL (
+        policy_name         => 'db_sec_ols_pol',
+        label               => 'S:RES,LEC,CR001,LECT,SUBM,EXAM:HOG,GRY,HUF,RAV,SLY'
+    );
+END;
+/
+
+SELECT SA_SESSION.LABEL ('db_sec_ols_pol') FROM DUAL;
+
+SELECT SA_SESSION.PRIVS ('db_sec_ols_pol') FROM DUAL;
+
+UPDATE  dev.UniversityResource
+SET     ols_col = CHAR_TO_LABEL('db_sec_ols_pol','C:CR001,EXAM:HOG')
+WHERE   Resource_Id = 1;

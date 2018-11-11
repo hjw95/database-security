@@ -90,7 +90,7 @@ BEGIN
         policy_name    => 'db_sec_ols_pol',
         user_name      => 'LECTURER1', 
         read_groups    => 'HOG,GRY',
-        write_groups   => 'GRY',
+        write_groups   => 'HOG,GRY',
         def_groups     => 'HOG,GRY',
         row_groups     => 'GRY'
     );

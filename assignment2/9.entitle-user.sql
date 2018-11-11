@@ -94,6 +94,12 @@ BEGIN
         def_groups     => 'HOG,GRY',
         row_groups     => 'GRY'
     );
+    
+    SA_USER_ADMIN.SET_USER_PRIVS(
+        policy_name   => 'db_sec_ols_pol',
+        user_name     => 'LECTURER1', 
+        privileges    => 'WRITEDOWN'
+    );
 END;
 /
 
